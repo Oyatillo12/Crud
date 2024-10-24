@@ -118,7 +118,7 @@ function Todos() {
                     <h2 className='text-2xl font-bold'>Crud</h2>
                 </div>
                 <div className='flex items-center justify-start space-x-4'>
-                    <TextField onChange={handleSearch} label='Search' className='w-[60%]' size='small' type='text' />
+                    <TextField autoComplete='off' onChange={handleSearch} label='Search' className='w-[60%]' size='small' type='text' />
                     <Button type='button' size='large' variant='contained' className=''><FilterListIcon /></Button>
                     <Button type='button' size='large ' onClick={handleUserAdd} variant='contained' className='!py-[8px]'>Add User</Button>
                 </div>
@@ -135,7 +135,7 @@ function Todos() {
                         <Typography id='modal-modal-title' variant='h6' component={'h2'} className='text-lg font-semibold'>{updatedTodo ? "Edit User" : "Add User"}</Typography>
                         <Button id='modal-modal-closebtn' onClick={() => setOpen(false)} type='button'><CloseIcon className='text-black' /></Button>
                     </Box>
-                    <form onSubmit={handleAddSubmit}>
+                    <form autoComplete='off' onSubmit={handleAddSubmit}>
                         <TextField value={newTodo} onChange={(e) => setNewTodo(e.target.value)} required size='small' className='!mb-4 w-full' label='Name' variant='outlined' type='text' />
                         <TextField value={email} onChange={(e) => setEmail(e.target.value)} required size='small' className='!mb-4 w-full' label='Email' variant='outlined' type='email' />
                         <TextField value={tel} onChange={(e) => setTel(e.target.value)} required size='small' className=' w-full' label='Phone Number' variant='outlined' type='tel' />
